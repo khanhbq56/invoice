@@ -123,25 +123,20 @@ def extract_data_from_invoice(image_files):
 def render_sidebar():
     """Render the sidebar with information only (no API key input)"""
     with st.sidebar:
-        # st.header("⚙️ 設定")
-        # st.success("API設定は完了しています")
-        
-        # st.markdown("---")
         st.markdown("### 📑 アプリについて")
         st.info(
-            
-            "請求書画像をアップロードすると、基本情報、商品詳細、"
+            "伝票画像をアップロードすると、基本情報、商品詳細、"
             "合計金額などが抽出されます。"
         )
 
 def render_main_area():
     """Render the main area of the application"""
-    st.title("📃 日本語請求書データ抽出ツール")
-    st.markdown("日本語の請求書・発注書から情報を自動抽出するツールです。画像をアップロードして、データを抽出してください。")
+    st.title("📃 日本語伝票データ抽出ツール")
+    st.markdown("日本語の伝票・発注書から情報を自動抽出するツールです。画像をアップロードして、データを抽出してください。")
     
     # File uploader
     uploaded_files = st.file_uploader(
-        "請求書画像をアップロード",
+        "伝票画像をアップロード",
         accept_multiple_files=True,
         type=["png", "jpg", "jpeg"],
         help="複数の画像をアップロードできます"
@@ -160,7 +155,7 @@ def render_main_area():
         
         # Extract button
         if st.button("🔍 データ抽出開始", use_container_width=True):
-            with st.spinner("請求書からデータを抽出中..."):
+            with st.spinner("伝票からデータを抽出中..."):
                 result = extract_data_from_invoice(uploaded_files)
                 if result:
                     st.session_state["extraction_result"] = result
