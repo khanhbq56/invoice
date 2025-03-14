@@ -123,10 +123,10 @@ def extract_data_from_invoice(image_files):
 def render_sidebar():
     """Render the sidebar with information only (no API key input)"""
     with st.sidebar:
-        st.header("⚙️ 設定")
-        st.success("API設定は完了しています")
+        # st.header("⚙️ 設定")
+        # st.success("API設定は完了しています")
         
-        st.markdown("---")
+        # st.markdown("---")
         st.markdown("### 📑 アプリについて")
         st.info(
             
